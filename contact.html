@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBloom ✈️ | Contact Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a1928 0%, #0f2a3b 100%);
+            min-height: 100vh;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(10, 25, 40, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD966, #FFA559);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #f0f3f8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: 0.2s;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: #FFD966;
+        }
+
+        /* Contact Us Container */
+        .contact-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-header h1 {
+            color: #FFD966;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header p {
+            color: #eef4ff;
+            font-size: 1.1rem;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            background: rgba(255, 255, 240, 0.08);
+            backdrop-filter: blur(5px);
+            border-radius: 30px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .contact-info {
+            color: #eef4ff;
+        }
+
+        .contact-info h3 {
+            color: #FFD966;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: #FFD966;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.9rem;
+            border-radius: 12px;
+            border: none;
+            background: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            box-shadow: 0 0 0 3px #FFD966;
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #FF8C42;
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #ff9f5e;
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            margin-top: 1rem;
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .navbar {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-area">
+            <span class="logo-icon">✈️</span>
+            <span class="brand">TravelBloom</span>
+        </div>
+        <div class="nav-links">
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-header">
+            <h1>CONTACT US</h1>
+            <p>Get in touch</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Get in touch</h3>
+                <p>Have questions about your next adventure? Our travel experts are here to help you plan the perfect trip.</p>
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <span>123 Travel Street, Dream City, DC 12345</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📧</span>
+                    <span>hello@travelbloom.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <span>+1 (555) 123-4567</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">⏰</span>
+                    <span>Mon-Fri: 9am - 6pm EST</span>
+                </div>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+                <div id="successMessage" class="success-message">
+                    ✅ Thank you! Your message has been sent successfully.
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const successMsg = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (name && email && message) {
+                successMsg.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Please fill out all fields before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>

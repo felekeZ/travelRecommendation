@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelBloom ✈️ | Explore Dream Destination</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0a1928;
+            overflow-x: hidden;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: rgba(10, 25, 40, 0.92);
+            backdrop-filter: blur(12px);
+            padding: 0.9rem 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 200, 100, 0.2);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .brand {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #FFD966, #FFA559);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #f0f3f8;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #FFD966;
+            transform: translateY(-2px);
+        }
+
+        .search-container {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 0.3rem 0.8rem;
+            border-radius: 60px;
+            align-items: center;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255,215,0,0.2);
+        }
+
+        .search-container input {
+            background: transparent;
+            border: none;
+            padding: 0.6rem 0.8rem;
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+            width: 220px;
+        }
+
+        .search-container input::placeholder {
+            color: #ccc;
+            font-weight: 400;
+        }
+
+        .search-container button {
+            background: #FFA559;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #1e2a36;
+        }
+
+        .search-container button:hover {
+            background: #FF8C42;
+            transform: scale(0.96);
+        }
+
+        .clear-btn {
+            background: #4a627a;
+            color: white !important;
+        }
+
+        .clear-btn:hover {
+            background: #2c3e4e;
+        }
+
+        /* ----- MAIN HOME SECTION (with social icons left vertical) ----- */
+        .home-wrapper {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: stretch;
+        }
+
+        /* Vertical Social Bar - LEFT side (exactly like screenshot alignment) */
+        .social-vertical-bar {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            z-index: 200;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
+            padding: 1.2rem 0.9rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .social-vertical-bar a {
+            color: #FFE5B4;
+            font-size: 1.7rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,240,0.08);
+            transition: 0.2s;
+        }
+
+        .social-vertical-bar a:hover {
+            color: #FFA559;
+            transform: scale(1.2);
+            background: rgba(255,165,80,0.2);
+            transform: translateX(3px);
+        }
+
+        /* Hero Background Section */
+        .home-container {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.65)), url('https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1600');
+            background-size: cover;
+            background-position: center 30%;
+            width: 100%;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 6rem 4rem 9rem;
+        }
+
+        .home-content {
+            max-width: 680px;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            padding: 2.5rem 2.8rem;
+            border-radius: 40px;
+            border-left: 6px solid #FFD966;
+            box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+        }
+
+        .home-content h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            color: #FFE5B4;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .home-content h1 br {
+            display: block;
+        }
+
+        .home-content p {
+            margin: 1.6rem 0;
+            color: #fef9ef;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .book-btn {
+            background: #FF8C42;
+            border: none;
+            padding: 0.9rem 2.2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #1e2a2f;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            margin-top: 0.5rem;
+        }
+
+        .book-btn:hover {
+            background: #ff9f5e;
+            transform: translateY(-3px);
+        }
+
+        /* Results Section (grid layout) */
+        .results-section {
+            padding: 2rem 5rem;
+            background: rgba(15, 30, 45, 0.92);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255,215,0,0.2);
+        }
+
+        .results-section h2 {
+            color: #FFD966;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .result-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+            transition: transform 0.25s ease, box-shadow 0.25s;
+        }
+
+        .result-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.3);
+        }
+
+        .result-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 1.3rem;
+        }
+
+        .card-info h3 {
+            color: #1e4663;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .card-info p {
+            color: #2c3e50;
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .no-results {
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 950px) {
+            .navbar {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .search-container {
+                width: 100%;
+                justify-content: center;
+            }
+            .home-container {
+                padding: 3rem 2rem 3rem 5rem;
+            }
+            .social-vertical-bar {
+                left: 0.8rem;
+                gap: 1rem;
+                padding: 0.8rem 0.5rem;
+            }
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .home-container {
+                padding: 2rem 1.5rem 2rem 4rem;
+            }
+            .social-vertical-bar a {
+                width: 32px;
+                height: 32px;
+                font-size: 1.3rem;
+            }
+            .home-content {
+                padding: 1.5rem;
+            }
+            .results-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar (Home, About Us, Contact Us + Search) -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <span class="logo-icon">✈️</span>
+            <span class="brand">TravelBloom</span>
+        </div>
+        <div class="nav-links">
+            <a href="travel_recommendation.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Enter beach, temple, or country...">
+            <button id="searchBtn">Search</button>
+            <button id="clearBtn" class="clear-btn">Clear</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Vertical Social Icons: LEFT aligned (Twitter, Facebook, Instagram, YouTube) -->
+        <div class="social-vertical-bar">
+            <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/" target="_blank" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+
+        <!-- Hero Section with background image and intro -->
+        <div class="home-container">
+            <div class="home-content">
+                <h1>EXPLORE DREAM<br>DESTINATION</h1>
+                <p>The Travel Recommendation App helps users explore popular travel destinations through an interactive and user-friendly interface. It allows users to search for beaches, temples, countries, or specific country names to view related cities along with images and descriptions. The app dynamically fetches data from the JSON file to display relevant results. It provides a simple and efficient way to discover and plan travel destinations.</p>
+                <button class="book-btn" id="bookNowBtn">Book Now</button>
+            </div>
+        </div>
+
+        <!-- Dynamic Results Grid (appears after search) -->
+        <div id="resultsSection" class="results-section" style="display: none;">
+            <h2>✨ Search Results</h2>
+            <div id="resultsGrid" class="results-grid"></div>
+        </div>
+    </main>
+
+    <script>
+        // ---------- GLOBALS ----------
+        let travelData = null;
+
+        // DOM elements
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const resultsSection = document.getElementById('resultsSection');
+        const resultsGrid = document.getElementById('resultsGrid');
+        const bookNowBtn = document.getElementById('bookNowBtn');
+
+        // ---------- FETCH DATA FROM JSON (travel_recommendation_api.json) ----------
+        async function fetchTravelData() {
+            try {
+                const response = await fetch('travel_recommendation_api.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                travelData = data;
+                console.log("✅ Travel data loaded successfully:", travelData);
+            } catch (error) {
+                console.error("❌ Error loading travel data:", error);
+                // Fallback: if json not found, use inline mock to ensure demo works
+                travelData = {
+                    countries: [
+                        { id: 1, name: "Australia", cities: [{ name: "Sydney, Australia", imageUrl: "https://images.pexels.com/photos/1797163/pexels-photo-1797163.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Vibrant city with Sydney Opera House and Harbour Bridge." }, { name: "Melbourne, Australia", imageUrl: "https://images.pexels.com/photos/1466293/pexels-photo-1466293.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Cultural hub famous for art and diverse neighborhoods." }] },
+                        { id: 2, name: "Japan", cities: [{ name: "Tokyo, Japan", imageUrl: "https://images.pexels.com/photos/2614816/pexels-photo-2614816.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Modern metropolis blending tradition and pop culture." }, { name: "Kyoto, Japan", imageUrl: "https://images.pexels.com/photos/2193300/pexels-photo-2193300.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Famous for temples, zen gardens, and tea houses." }] },
+                        { id: 3, name: "Brazil", cities: [{ name: "Rio de Janeiro, Brazil", imageUrl: "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Lively beaches, carnival, and iconic Christ the Redeemer." }, { name: "São Paulo, Brazil", imageUrl: "https://images.pexels.com/photos/1246791/pexels-photo-1246791.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Financial hub with vibrant arts and nightlife." }] }
+                    ],
+                    temples: [
+                        { name: "Angkor Wat, Cambodia", imageUrl: "https://images.pexels.com/photos/236714/pexels-photo-236714.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Largest religious monument & UNESCO World Heritage site." },
+                        { name: "Taj Mahal, India", imageUrl: "https://images.pexels.com/photos/3341699/pexels-photo-3341699.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Symbol of love & Mughal architecture masterpiece." }
+                    ],
+                    beaches: [
+                        { name: "Bora Bora, French Polynesia", imageUrl: "https://images.pexels.com/photos/753626/pexels-photo-753626.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Turquoise waters & overwater bungalows paradise." },
+                        { name: "Copacabana Beach, Brazil", imageUrl: "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=600", description: "Famous vibrant beach in Rio with scenic views." }
+                    ]
+                };
+                console.log("⚠️ Using fallback inline data because JSON fetch failed.");
+            }
+        }
+
+        // ---------- SEARCH LOGIC (case-insensitive, keywords: beach/beaches, temple/temples, country/countries, or specific country name) ----------
+        function performSearch() {
+            if (!travelData) {
+                alert("Data is still loading... please wait a moment and try again.");
+                return;
+            }
+
+            let keyword = searchInput.value.trim().toLowerCase();
+            if (!keyword) {
+                resultsSection.style.display = 'none';
+                return;
+            }
+
+            let results = [];
+
+            // 1) Beach variations
+            if (keyword === 'beach' || keyword === 'beaches') {
+                results = travelData.beaches ? [...travelData.beaches] : [];
+            }
+            // 2) Temple variations
+            else if (keyword === 'temple' || keyword === 'temples') {
+                results = travelData.temples ? [...travelData.temples] : [];
+            }
+            // 3) Country keyword -> returns all cities from all countries
+            else if (keyword === 'country' || keyword === 'countries') {
+                if (travelData.countries) {
+                    travelData.countries.forEach(country => {
+                        if (country.cities && country.cities.length) {
+                            results.push(...country.cities);
+                        }
+                    });
+                }
+            }
+            else {
+                // 4) Specific country name (exact match)
+                let foundCountry = null;
+                if (travelData.countries) {
+                    foundCountry = travelData.countries.find(c => c.name.toLowerCase() === keyword);
+                    if (foundCountry && foundCountry.cities) {
+                        results = [...foundCountry.cities];
+                    }
+                }
+                // 5) If no exact country match, search within beaches, temples, and all city names
+                if (results.length === 0) {
+                    // Check beaches
+                    if (travelData.beaches) {
+                        const matchedBeaches = travelData.beaches.filter(b => b.name.toLowerCase().includes(keyword));
+                        results.push(...matchedBeaches);
+                    }
+                    // Check temples
+                    if (travelData.temples) {
+                        const matchedTemples = travelData.temples.filter(t => t.name.toLowerCase().includes(keyword));
+                        results.push(...matchedTemples);
+                    }
+                    // Check all cities from all countries
+                    if (travelData.countries) {
+                        travelData.countries.forEach(country => {
+                            if (country.cities) {
+                                const matchedCities = country.cities.filter(city => city.name.toLowerCase().includes(keyword));
+                                results.push(...matchedCities);
+                            }
+                        });
+                    }
+                }
+            }
+
+            // Remove duplicates (just in case) by using a Map with name as key
+            const uniqueResults = [];
+            const nameMap = new Map();
+            for (const item of results) {
+                if (!nameMap.has(item.name)) {
+                    nameMap.set(item.name, item);
+                    uniqueResults.push(item);
+                }
+            }
+
+            displayResults(uniqueResults);
+        }
+
+        // Display results using grid layout, guaranteeing at least 2 recommendations for main categories (beach/temple/country)
+        function displayResults(resultsArray) {
+            if (!resultsSection || !resultsGrid) return;
+
+            if (!resultsArray || resultsArray.length === 0) {
+                resultsGrid.innerHTML = `<div class="no-results">😔 No recommendations found. Try "beach", "temple", "country", or a specific place like "Japan" or "Sydney".</div>`;
+                resultsSection.style.display = 'block';
+                return;
+            }
+
+            const cardsHtml = resultsArray.map(item => {
+                let imgUrl = item.imageUrl || 'https://via.placeholder.com/300x200?text=Travel+Destination';
+                return `
+                    <div class="result-card">
+                        <img src="${imgUrl}" alt="${escapeHtml(item.name)}" onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+                        <div class="card-info">
+                            <h3>${escapeHtml(item.name)}</h3>
+                            <p>${escapeHtml(item.description)}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            resultsGrid.innerHTML = cardsHtml;
+            resultsSection.style.display = 'block';
+            // Smooth scroll to results
+            resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // simple helper to avoid XSS
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+                return c;
+            });
+        }
+
+        // Clear results & input field
+        function clearAllResults() {
+            if (searchInput) searchInput.value = '';
+            if (resultsSection) resultsSection.style.display = 'none';
+            if (resultsGrid) resultsGrid.innerHTML = '';
+        }
+
+        // Book Now alert placeholder
+        function handleBookNow() {
+            alert("✨ Thanks for your interest! Booking feature will be available soon. Start exploring destinations!");
+        }
+
+        // Event listeners
+        function bindEvents() {
+            if (searchBtn) searchBtn.addEventListener('click', performSearch);
+            if (clearBtn) clearBtn.addEventListener('click', clearAllResults);
+            if (searchInput) {
+                searchInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') performSearch();
+                });
+            }
+            if (bookNowBtn) bookNowBtn.addEventListener('click', handleBookNow);
+        }
+
+        // Initialize fetch and then set event listeners
+        async function init() {
+            await fetchTravelData();
+            bindEvents();
+        }
+
+        init();
+    </script>
+</body>
+</html>
